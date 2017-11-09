@@ -1,8 +1,8 @@
 ---
 layout: post
-title: How To Set Up mod_rewrite for Apache
-subtitle: Each post also has a subtitle
-gh-repo: daattali/beautiful-jekyll
+title: Set Up mod_rewrite
+subtitle: How To Set Up mod_rewrite for Apache
+gh-repo: sherafatian/sherafatian.github.io
 gh-badge:
   - star
   - fork
