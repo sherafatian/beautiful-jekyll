@@ -6,7 +6,7 @@
 layout: post
 title: Dear diary
 subtitle: Best sport ever!
-bigimg: /img/path.jpg               (Image on TOP)
+bigimg: /img/path.jpg               (Image on TOP e.g 1200x585)
 image: /img/hello_world.jpeg        (Image of profile)
 tags: [random, diary, school]       (TAG)
 
