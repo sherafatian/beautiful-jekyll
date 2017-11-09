@@ -3,6 +3,7 @@ layout: post
 published: true
 title: Check Enable User
 subtitle: Check user enable in laravel 5.4
+bigimg: /img/laravel_banner.jpg
 date: '2017-11-09'
 tags:
   - enable
