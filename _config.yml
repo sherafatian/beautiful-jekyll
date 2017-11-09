@@ -25,9 +25,9 @@ description: A place for my notes and minimals.
 navbar-links:
   About: "aboutme"
   Resources:
-    - Beautiful Jekyll: "http://deanattali.com/beautiful-jekyll/"
-    - Learn markdown: "http://www.markdowntutorial.com/"
-    - GitHub Pages: "https://sherafatian.github.com/"
+    - Prose: "http://prose.io/"
+    - markdown: "http://www.markdowntutorial.com/"
+    - My GitHub: "https://sherafatian.github.com/"
   Author's home: "http://rapasit.com"
 
 # Image to show in the navigation bar - image must be a square (width = height)
