@@ -108,7 +108,7 @@ url-pretty: "sherafatian.github.io"  # eg. "deanattali.com/beautiful-jekyll"
 
 # --- Misc --- #
 # Fill in your Disqus shortname (NOT the userid) if you want to support Disqus comments
-disqus: "sherafatian-github-io"
+# disqus: "sherafatian-github-io"
 
 # Fill in your Google Analytics ID to track your website using GA
 #google_analytics: ""
@@ -147,7 +147,7 @@ defaults:
       type: "posts"
     values:
       layout: "post"
-      comments: true  # add comments to all blog posts
+      comments: false  # add comments to all blog posts
       social-share: true # add social media sharing buttons to all blog posts
   -
     scope:
