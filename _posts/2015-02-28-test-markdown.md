@@ -1,72 +1,75 @@
 ---
 layout: post
-title: Test markdown
+title: How To Set Up mod_rewrite for Apache
 subtitle: Each post also has a subtitle
 gh-repo: daattali/beautiful-jekyll
-gh-badge: [star, fork, follow]
+gh-badge:
+  - star
+  - fork
+  - follow
+published: true
 ---
 
-You can write regular [markdown](http://markdowntutorial.com/) here and Jekyll will automatically convert it to a nice webpage.  I strongly encourage you to [take 5 minutes to learn how to write in markdown](http://markdowntutorial.com/) - it'll teach you how to transform regular text into bold/italics/headings/tables/etc.
+# How To Set Up mod_rewrite for Apache
 
-**Here is some bold text**
+## Step 1 — Installing Apache
 
-## Here is a secondary heading
+In this step, we will use a built-in package installer called `apt-get`. It simplifies management drastically and facilitates a clean installation.
 
-Here's a useless table:
-
-| Number | Next number | Previous number |
-| :------ |:--- | :--- |
-| Five | Six | Four |
-| Ten | Eleven | Nine |
-| Seven | Eight | Six |
-| Two | Three | One |
-
-
-How about a yummy crepe?
-
-![Crepe](http://s3-media3.fl.yelpcdn.com/bphoto/cQ1Yoa75m2yUFFbY2xwuqw/348s.jpg)
-
-Here's a code chunk:
-
-~~~
-var foo = function(x) {
-  return(x + 5);
-}
-foo(3)
-~~~
-
-And here is the same code with syntax highlighting:
-
-```javascript
-var foo = function(x) {
-  return(x + 5);
-}
-foo(3)
+First, update the system's package index. This will ensure that old or outdated packages do not interfere with the installation.
 ```
+sudo apt-get update
+```
+Apache2 is the aforementioned HTTP server and the world's most commonly used. To install it, run the following:
+```
+sudo apt-get install apache2
+```
+## Step 2 — Enabling mod_rewrite
 
-And here is the same code yet again but with line numbers:
+Now, we need to activate `mod_rewrite`.
+```
+sudo a2enmod rewrite
+```
+This will activate the module or alert you that the module is already in effect. To put these changes into effect, restart Apache.
+```
+sudo service apache2 restart
+```
+## Step 3 — Setting Up .htaccess
 
-{% highlight javascript linenos %}
-var foo = function(x) {
-  return(x + 5);
-}
-foo(3)
-{% endhighlight %}
+In this section, we will setup a `.htaccess` file for simpler rewrite rule management.
 
-## Boxes
-You can add notification, warning and error boxes like this:
+A `.htaccess` file allows us to modify our rewrite rules without accessing server configuration files. For this reason, `.htaccess` is critical to your web application's security. The period that precedes the filename ensures that the file is hidden.
 
-### Notification
+We will need to set up and secure a few more settings before we can begin.
 
-{: .box-note}
-**Note:** This is a notification box.
+First, allow changes in the `.htaccess` file. Open the default Apache configuration file using `nano` or your favorite text editor.
+```
+sudo nano /etc/apache2/sites-enabled/000-default.conf
+```
+Inside that file, you will find the `<VirtualHost *:80>` block on line 1. Inside of that block, add the following block:
+```
+/etc/apache2/sites-available/default
+<Directory /var/www/html>
+                Options Indexes FollowSymLinks MultiViews
+                AllowOverride All
+                Order allow,deny
+                allow from all
+</Directory>
+```
+Your file should now match the following. Make sure that all blocks are properly indented.
+```
+/etc/apache2/sites-available/default
+<VirtualHost *:80>
+    <Directory /var/www/html>
 
-### Warning
+        . . .
 
-{: .box-warning}
-**Warning:** This is a warning box.
+    </Directory>
 
-### Error
-
-{: .box-error}
-**Error:** This is an error box.
+    . . .
+</VirtualHost>
+```
+To put these changes into effect, restart Apache.
+```
+sudo service apache2 restart
+```
