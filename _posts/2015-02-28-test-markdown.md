@@ -8,6 +8,7 @@ gh-badge:
   - fork
   - follow
 published: true
+date: '2017-11-09'
 ---
 
 # How To Set Up mod_rewrite for Apache
