@@ -7,6 +7,7 @@ gh-badge:
   - star
   - fork
   - follow
+  - watch
 published: true
 date: '2017-11-09'
 ---
