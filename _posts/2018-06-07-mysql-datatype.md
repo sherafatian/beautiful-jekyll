@@ -14,9 +14,10 @@ gh-badge:
   - follow
 ---
 
-#Numeric type
+[TOC]
 
-##Integer Types
+# Numeric type
+## Integer Types
 
 1. TINYINT[(M)] [UNSIGNED] [ZEROFILL]: A very small integer. The signed range is -128 to 127. The unsigned range is 0 to 255.
 2. SMALLINT[(M)] [UNSIGNED] [ZEROFILL]: A small integer. The signed range is -32768 to 32767. The unsigned range is 0 to 65535.
@@ -25,7 +26,8 @@ gh-badge:
 5. INTEGER[(M)] [UNSIGNED] [ZEROFILL]: This type is a synonym for INT.
 6. BIGINT[(M)] [UNSIGNED] [ZEROFILL]: A large integer. The signed range is -9223372036854775808 to 9223372036854775807. The unsigned range is 0 to 18446744073709551615.
 
-##Other
+## Other
+
 BIT[(M)]: A bit-value type. M indicates the number of bits per value, from 1 to 64. The default is 1 if M is omitted.
 BOOL, BOOLEAN: These types are synonyms for TINYINT(1). A value of zero is considered false. Nonzero values are considered true
 DECIMAL[(M[,D])] [UNSIGNED] [ZEROFILL]: A packed "exact" fixed-point number. M is the total number of digits (the precision) and D is the number of digits after the decimal point (the scale). The decimal point and (for negative numbers) the - sign are not counted in M. If D is 0, values have no decimal point or fractional part. The maximum number of digits (M) for DECIMAL is 65. The maximum number of supported decimals (D) is 30. If D is omitted, the default is 0. If M is omitted, the default is 10.
